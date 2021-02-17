@@ -33,7 +33,7 @@ export PATH+=':/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin'
 # It's still a work in progress, so you may see some variance in this guideline until it is complete
 
 # simplify install
-PIHOLE_SKIP_OS_CHECK=true
+# PIHOLE_SKIP_OS_CHECK=true
 
 # List of supported DNS servers
 DNS_SERVERS=$(cat << EOM
@@ -63,9 +63,9 @@ coltable=/opt/pihole/COL_TABLE
 webroot="/var/www/html"
 
 # We store several other directories and
-webInterfaceGitUrl="https://github.com/pi-simple-adblocker/AdminLTE.git"
+webInterfaceGitUrl="https://github.com/fredwong1/adblocker-admin.git"
 webInterfaceDir="${webroot}/admin"
-piholeGitUrl="https://github.com/pi-simple-adblocker/pi-hole.git"
+piholeGitUrl="https://github.com/fredwong1/adblocker.git"
 PI_HOLE_LOCAL_REPO="/etc/.pihole"
 # These are the names of pi-holes files, stored in an array
 PI_HOLE_FILES=(chronometer list piholeDebug piholeLogFlush setupLCD update version gravity uninstall webpage)
