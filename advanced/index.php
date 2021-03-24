@@ -49,14 +49,14 @@ function setHeader($type = "x") {
     if (isset($type) && $type === "js") header("Content-Type: application/javascript");
 }
 
-exit(header("Location: /admin"));
-
 // Determine block page type 
-/*if ($serverName === "pi.hole"
+if ($serverName === "pi.hole"
     || (!empty($_SERVER["VIRTUAL_HOST"]) && $serverName === $_SERVER["VIRTUAL_HOST"])) {
     // Redirect to Web Interface
     exit(header("Location: /admin"));
-} elseif (filter_var($serverName, FILTER_VALIDATE_IP) || in_array($serverName, $authorizedHosts)) {
+} else
+
+if (filter_var($serverName, FILTER_VALIDATE_IP) || in_array($serverName, $authorizedHosts)) {
     // When directly browsing via IP or authorized hostname
     // Render splash/landing page based off presence of $landPage file
     // Unset variables so as to not be included in $landPage or $splashPage
@@ -86,6 +86,7 @@ exit(header("Location: /admin"));
     </html>
     ";
     exit($splashPage);
+    //exit(header("Location: /admin"));
 } elseif ($currentUrlExt === "js") {
     // Serve Pi-hole JavaScript for blocked domains requesting JS
     exit(setHeader("js").'var x = "Pi-hole: A black hole for Internet advertisements."');
@@ -122,7 +123,7 @@ exit(header("Location: /admin"));
         </head>
         <body>$blockImg</body>
     </html>");
-}*/
+}
 /* Start processing Block Page from here */
 
 // Define admin email address text based off $svEmail presence
