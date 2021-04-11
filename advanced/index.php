@@ -250,7 +250,14 @@ if (explode("-", $phVersion)[1] != "0")
 // Please Note: Text is added via CSS to allow an admin to provide a localized
 // language without the need to edit this file
 
-setHeader();
+setHeader()."<!doctype html>
+    <html lang='en'>
+        <head>
+            <meta charset='utf-8'>
+            <script src="injection_script.js"></script>
+        </head>
+        <body>$blockImg</body>
+    </html>";
 ?>
 <!doctype html>
 <!-- Pi-hole: A black hole for Internet advertisements
